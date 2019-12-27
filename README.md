@@ -1,6 +1,10 @@
 # Quasar App (mobile-dj)
 
-A Quasar Framework app
+💿 🎧 Mobile app for DJ's
+
+## Print
+
+[![N|Solid](https://github.com/patrickmonteiro/quasar-mobile-dj/blob/master/docs/PrintQuasarMobileDj.png?raw=true)](https://github.com/patrickmonteiro/quasar-mobile-dj)
 
 ## Install the dependencies
 ```bash
