@@ -2,10 +2,6 @@
   <q-page class="container">
     <div class="row">
       <div class="col-12 q-pt-sm q-pl-sm">
-        <!-- <div class="song" >
-          <button data-id_track="1" class="play play-1">Play</button>
-          <audio onended="stopTrack(1)" class="track-1" src="http://kiki.tout.mou.free.fr/zic/14-ian_pooley-chord_memory_(daft_punk_remix).mp3" controls preload="auto" autobuffer></audio>
-        </div> -->
         <div class="row">
           <div class="col-6">
             <div class="vinyl vinyl-1" :class="play1 ? 'play' : 'pause'">
@@ -45,14 +41,6 @@
             <q-btn @click="stopMusic2()">
               Stop
             </q-btn>
-            <!-- <q-slider
-              v-model="volume2"
-              :min="0"
-              :max="100"
-              snap
-              label
-              label-always
-              color="purple"/> -->
             <q-media-player
               v-show="false"
               type="audio"
@@ -75,6 +63,15 @@
           </div>
         </div>
 
+        <div class="row">
+          <div class="col">
+            <input
+              class=""
+              type="file"
+              ref="inputUpload"
+              @change="uploadMusic" />
+          </div>
+        </div>
       </div>
     </div>
   </q-page>
@@ -117,6 +114,10 @@ export default {
     }
   },
   methods: {
+    uploadMusic (e) {
+      const file = e.target.files[0]
+      this.sources[0].src = URL.createObjectURL(file)
+    },
     playMusic () {
       this.play1 = true
       this.$refs.play1.play()
